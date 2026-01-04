@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <base target="_top">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProBatt Warranty Registration</title>
+    <style>
+        /* Reset default margin and padding for the page */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Hide scrollbars from the main page */
+        }
+        /* Make the iframe fill the entire body */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* Remove the default border around the iframe */
+            display: block; /* Ensures no extra space below the iframe */
+        }
+    </style>
+</head>
+<body>
+    <!-- The iframe will now fill the entire screen without any extra spacing -->
+    <iframe id="warranty-form" scrolling="yes" src="https://script.google.com/macros/s/AKfycbxVn7rHw-8O3SJQkN4KTyqt2Mh1VVXwR32rHSPe_dTt_9KCT7pBBoT-RQ-RNOnkFIQ/exec"></iframe>
+
+    <script>
+        // This script dynamically sets the iframe height to the actual inner window height.
+        // This helps to avoid issues with mobile browser UI bars (like in LINE).
+        function adjustIframeHeight() {
+            const iframe = document.getElementById('warranty-form');
+            if (iframe) {
+                // Set the height to the viewable area of the window.
+                iframe.style.height = window.innerHeight + 'px';
+            }
+        }
+
+        // Adjust on initial page load
+        window.addEventListener('load', adjustIframeHeight);
+
+        // Adjust when the window is resized (e.g., device orientation changes)
+        window.addEventListener('resize', adjustIframeHeight);
+    </script>
+</body>
+</html>
